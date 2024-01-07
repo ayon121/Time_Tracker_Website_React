@@ -5,6 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      'main': '#0d6efd',
+      'sub_color_1': '#2a2e34',
+      'white_color': '#FFFFFF',
+      'highlight_color': '#FF444A',
+      
+    },
     extend:  {
       fontFamily : {
         poppins : "'Poppins', sans-serif;"

@@ -1,9 +1,10 @@
+import Navbar from "../../Shared/Navbar";
 
 
 const Home = () => {
     return (
         <div>
-            <h1 className="font-poppins">home</h1>
+            <Navbar></Navbar>
         </div>
     );
 };
