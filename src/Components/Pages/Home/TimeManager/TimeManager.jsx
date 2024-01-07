@@ -1,10 +1,10 @@
 import Lottie from "lottie-react";
-import timeanimation from '../../../../assets/animation/time_management.json'
+import timeanimation from '../../../../assets/animation/Animation2.json'
 const TimeManager = () => {
     return (
         <div className="max-w-6xl mx-auto px-4 mt-4 font-poppins">
 
-            <div className="flex items-center justify-around h-auto">
+            <div className="flex flex-row-reverse items-center justify-around h-auto">
                 {/* content */}
                 <div className="w-full md:w-3/4">
                     <h1 className="text-3xl md:text-4xl mt-3">Best <span className="text-main">Time Manager</span> </h1>
