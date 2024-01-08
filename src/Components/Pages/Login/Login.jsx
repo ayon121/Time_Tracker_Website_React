@@ -1,11 +1,12 @@
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/Authproviders";
+import { FcGoogle } from "react-icons/fc";
 
 
 const Login = () => {
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, GoogleLogin } = useContext(AuthContext)
     const navigate = useNavigate()
 
     const handlelogin = e => {
@@ -23,9 +24,20 @@ const Login = () => {
             })
 
             .catch(error => console.log(error))
-
     }
 
+
+    const HandleGoogleLogin = () => {
+        GoogleLogin()
+            .then(result => {
+                console.log(result)
+                navigate('/')
+
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
     return (
         <div>
             <Navbar></Navbar>
@@ -33,7 +45,7 @@ const Login = () => {
             <div className='flex justify-center items-center mt-4 px-6 gap-4 font-inter'>
                 <div className='text-center border-4 rounded-2xl border-main p-6'>
                     <div className='text-center'>
-                        <button className='text-5xl '></button>
+                        <button onClick={HandleGoogleLogin} className='text-5xl ' ><FcGoogle /></button>
 
                     </div>
                     <div>
