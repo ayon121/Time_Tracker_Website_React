@@ -1,8 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link,  useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/Authproviders";
 
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+
+    const handlelogin = e => {
+        e.preventDefault()
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email')
+        const password = form.get('password')
+
+        loginUser(email, password)
+            .then(result => {
+                console.log(result)
+                // toast("Login Success")
+                // navigate after login
+                navigate('/')
+            })
+
+            .catch(error => console.log(error))
+
+    }
+
     return (
         <div>
             <Navbar></Navbar>
@@ -17,7 +40,7 @@ const Login = () => {
                         <h1>or</h1>
                     </div>
                     <div>
-                        <form >
+                        <form onSubmit={handlelogin}>
 
                             <label className='flex justify-start'>Email</label>
                             <input type="email" name='email' placeholder="Type your email" className="input input-bordered input-primary w-full max-w-xs my-2" required /><br />

@@ -9,9 +9,7 @@ const Authproviders = ({children}) => {
     const [user ,setuser] = useState(null)
     const auth = getAuth(app);
 
-    const createUser = (email , password) => {
-        return createUserWithEmailAndPassword(auth , email , password)
-    }
+  
 
     useEffect(()=>{
         const Unsubscribe = onAuthStateChanged(auth , currentUser => {
@@ -24,9 +22,24 @@ const Authproviders = ({children}) => {
         }
     },[auth ])
 
+    const createUser = (email , password) => {
+        return createUserWithEmailAndPassword(auth , email , password)
+    }
+
+    const loginUser = (email , password) => {
+        return signInWithEmailAndPassword(auth , email , password)
+    }
+
+    const logout = () => {
+        return signOut(auth)
+    }
+
+
     const authInfo = {
         user,
-        createUser
+        createUser,
+        loginUser,
+        logout
     }
 
     return (
