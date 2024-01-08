@@ -11,10 +11,10 @@ import Home from './Components/Pages/Home/Home';
 import Login from './Components/Pages/Login/Login';
 import Register from './Components/Pages/Register/Register';
 import Authproviders from './Providers/Authproviders';
-import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import DashBoardLayout from './Components/Pages/Dashboard/DashBoardLayout';
 import CreateTask from './Components/Pages/Dashboard/CreateTask/CreateTask';
 import AllTasks from './Components/Pages/Dashboard/AllTasks/AllTasks';
+import TaskDescription from './Components/Pages/Dashboard/TaskDescription/TaskDescription';
 
 
 const router = createBrowserRouter([
@@ -47,6 +47,10 @@ const router = createBrowserRouter([
       {
         path : "/dashboard/create",
         element : <CreateTask></CreateTask>
+      },
+      {
+        path : "/dashboard/task/id",
+        element : <TaskDescription></TaskDescription>
       }
     ]
   }
