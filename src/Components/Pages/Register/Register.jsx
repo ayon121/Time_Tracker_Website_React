@@ -1,8 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../../Shared/Navbar";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/Authproviders";
 
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const handleRegister = e => {
+        e.preventDefault()
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email')
+        const password = form.get('password')
+        const name = form.get('name')
+        const imgurl = form.get('img')
+
+        console.log(name , imgurl);
+        // create user
+        createUser(email , password)
+        navigate('/')
+    }
     return (
         <div>
             <Navbar></Navbar>
@@ -17,7 +34,7 @@ const Register = () => {
                         <h1>or</h1>
                     </div>
                     <div>
-                        <form >
+                        <form onSubmit={handleRegister}>
                             <div className='flex flex-col md:flex-row gap-2'>
                                 <div>
                                     <label className='flex justify-start'>Name</label>
