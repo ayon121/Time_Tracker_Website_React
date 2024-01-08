@@ -13,6 +13,8 @@ import Register from './Components/Pages/Register/Register';
 import Authproviders from './Providers/Authproviders';
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 import DashBoardLayout from './Components/Pages/Dashboard/DashBoardLayout';
+import CreateTask from './Components/Pages/Dashboard/CreateTask/CreateTask';
+import AllTasks from './Components/Pages/Dashboard/AllTasks/AllTasks';
 
 
 const router = createBrowserRouter([
@@ -40,7 +42,11 @@ const router = createBrowserRouter([
     children : [
       {
         path : "/dashboard",
-        element : <Dashboard></Dashboard>
+        element : <AllTasks></AllTasks>
+      },
+      {
+        path : "/dashboard/create",
+        element : <CreateTask></CreateTask>
       }
     ]
   }
