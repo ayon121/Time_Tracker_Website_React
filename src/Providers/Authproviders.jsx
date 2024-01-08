@@ -34,12 +34,21 @@ const Authproviders = ({children}) => {
         return signOut(auth)
     }
 
+    const UpdateProfile = (name , imgurl) => {
+        return  updateProfile(auth.currentUser, {
+            displayName: name , photoURL: imgurl
+        })
+
+    }
+
+
 
     const authInfo = {
         user,
         createUser,
         loginUser,
-        logout
+        logout,
+        UpdateProfile
     }
 
     return (
