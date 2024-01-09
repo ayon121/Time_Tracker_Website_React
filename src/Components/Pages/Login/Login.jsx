@@ -20,7 +20,7 @@ const Login = () => {
                 console.log(result)
                 // toast("Login Success")
                 // navigate after login
-                navigate('/')
+                navigate('/dashboard')
             })
 
             .catch(error => console.log(error))
@@ -31,7 +31,7 @@ const Login = () => {
         GoogleLogin()
             .then(result => {
                 console.log(result)
-                navigate('/')
+                navigate('/dashboard')
 
             })
             .catch(error => {
