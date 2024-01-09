@@ -15,6 +15,8 @@ import DashBoardLayout from './Components/Pages/Dashboard/DashBoardLayout';
 import CreateTask from './Components/Pages/Dashboard/CreateTask/CreateTask';
 import AllTasks from './Components/Pages/Dashboard/AllTasks/AllTasks';
 import TaskDescription from './Components/Pages/Dashboard/TaskDescription/TaskDescription';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+
 
 
 const router = createBrowserRouter([
@@ -38,11 +40,11 @@ const router = createBrowserRouter([
   },
   {
     path : "/dashboard",
-    element : <DashBoardLayout></DashBoardLayout>,
+    element : <PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
     children : [
       {
         path : "/dashboard",
-        element : <AllTasks></AllTasks>
+        element : <PrivateRoute><AllTasks></AllTasks></PrivateRoute>
       },
       {
         path : "/dashboard/create",

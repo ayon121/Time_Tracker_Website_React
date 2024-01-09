@@ -23,9 +23,9 @@ const Navbar = () => {
                         
 
                         {
-                            user ? <button onClick={handlelogOut} className="btn btn-sm md:btn-md py-2  border-b-4 border-b-sub_color_1 hover:bg-sub_color_1 hover:border-sub_color_1 hover:text-white_color hover:px-3">Logout</button>
+                            user ? <Link  to="/dashboard" className="btn btn-sm md:btn-md py-2  border-b-4 border-b-sub_color_1 hover:bg-sub_color_1 hover:border-sub_color_1 hover:text-white_color hover:px-3">DashBoard</Link>
                                 :
-                                <Link to="/login"><button className="btn btn-sm md:btn-md py-2  border-b-4 border-b-sub_color_1 hover:bg-sub_color_1 hover:border-sub_color_1 hover:text-white_color hover:px-3">Start Now</button></Link>
+                                <Link to="/login"><button className="btn btn-sm md:btn-md py-2  border-b-4 border-b-sub_color_1 hover:bg-sub_color_1 hover:border-sub_color_1 hover:text-white_color hover:px-3">Login</button></Link>
                         }
 
                     </ul>
